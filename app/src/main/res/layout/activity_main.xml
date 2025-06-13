@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.MainActivity">
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/backgroundcolorAlt">
+
+        <!-- Professional Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomato Guard"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Image Carousel Section -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <!-- Improved Horizontal ScrollView with pager indicator style -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Scroll indicator dots -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/image_slider"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp">
+
+                <View
+                    android:id="@+id/dot_one"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/selected_dot"
+                    android:layout_marginEnd="8dp" />
+
+                <View
+                    android:id="@+id/dot_two"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/unselected_dot" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Features Section -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/featuresLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Features (خصوصیات)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/toggleContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/toggle_background"
+                android:padding="4dp"
+                android:elevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/englishLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EN"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="8dp"
+                    android:background="@drawable/toggle_selected"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/urduLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="اردو"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="8dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/classifyDisease"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:background="@color/card_background"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="13dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/classify"/>
+
+                    <TextView
+                        android:id="@+id/diseaseTest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Classify Diseases"/>
+
+
+
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recommendations"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="13dp"
+                    android:background="@color/card_background"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/reco"/>
+
+                    <TextView
+                        android:id="@+id/recomendText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Recommendations "/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seasonal Tips(موسمی مشورے)"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/seasonalRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"/>
+
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/tickerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"            android:layout_marginTop="30dp"
+
+                android:textSize="14sp"
+                 android:background="#3B8E3E"
+                android:padding="10dp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+        </HorizontalScrollView>
+
+
+
+    </LinearLayout>
+
+    <!-- Progress Overlay (placed outside the main content so it can cover the entire screen) -->
+    <include
+        android:id="@+id/progress_overlay"
+        layout="@layout/progress_overlay" />
+</FrameLayout>
